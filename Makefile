@@ -1,6 +1,8 @@
 #
-# Build each *.cpp or *.cc file in the current directory as a stand-alone
-# program.
+# Generic makefile for one-file C++ programs
+#
+# Compiles all C++ files (*.cpp or *.cc) in current directory.
+#
 #
 
 #
@@ -12,5 +14,12 @@ CXXFLAGS := -O2 -fsanitize=undefined -fsanitize=address -Werror -Wall -Wextra -W
 # uncomment to use clang, otherwise defaults to gcc
 #CXX := clang++
 
+# Add flags for linking with boost::filesystem
+#LDLIBS := -lboost_system -lboost_filesystem
+
 .PHONY: all
-all: $(basename $(wildcard *.cc) $(wildcard *.cpp))
+all: $(basename $(wildcard *.cpp) $(wildcard *.cc))
+
+.PHONY: clean
+clean:
+	rm $(basename $(wildcard *.cpp) $(wildcard *.cc))
