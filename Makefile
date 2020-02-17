@@ -6,10 +6,11 @@
 #
 
 #
-# flags work with gcc 7.3
+# flags work with gcc 7.3, 9.2
+#                 clang 9.0
 #
-CXXFLAGS := -O2 -fsanitize=undefined -fsanitize=address -Werror -Wall -Wextra -Wpointer-arith \
-            -Wconversion -std=c++17
+CXXFLAGS := -O2 -fsanitize=undefined -fsanitize=address -Werror -Wall -Wextra \
+            -Wpointer-arith -Wconversion -std=c++17
 
 # uncomment to use clang, otherwise defaults to gcc
 #CXX := clang++
