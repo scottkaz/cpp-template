@@ -6,7 +6,7 @@
 #
 
 #
-# flags work with gcc 7.3, 9.2
+# flags work with gcc 9.2, 11.4
 #                 clang 9.0
 #
 CXXFLAGS := -O2 -fsanitize=undefined -fsanitize=address -Werror -Wall -Wextra \
